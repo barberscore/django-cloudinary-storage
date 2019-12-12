@@ -1,13 +1,11 @@
 from itertools import chain
 
-from django.core.management.base import BaseCommand
-from django.apps import apps
-from django.db import models
-from django.utils.six.moves import input
-
-from cloudinary_storage.helpers import get_resources
-from cloudinary_storage.storage import storages_per_type, RESOURCE_TYPES
 from cloudinary_storage import app_settings
+from cloudinary_storage.helpers import get_resources
+from cloudinary_storage.storage import RESOURCE_TYPES, storages_per_type
+from django.apps import apps
+from django.core.management.base import BaseCommand
+from django.db import models
 
 
 class Command(BaseCommand):

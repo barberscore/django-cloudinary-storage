@@ -1,15 +1,17 @@
-from uuid import uuid4
-import os
 import errno
-
-from django.core.files import File
-from django.core.management import call_command
-from django.utils.six import StringIO
-from django.utils import version
+import os
+from io import StringIO
+from uuid import uuid4
 
 from cloudinary_storage import app_settings
-from cloudinary_storage.storage import MediaCloudinaryStorage, StaticHashedCloudinaryStorage, HashedFilesMixin
-from cloudinary_storage.management.commands.deleteorphanedmedia import Command as DeleteOrphanedMediaCommand
+from cloudinary_storage.management.commands.deleteorphanedmedia import \
+    Command as DeleteOrphanedMediaCommand
+from cloudinary_storage.storage import (HashedFilesMixin,
+                                        MediaCloudinaryStorage,
+                                        StaticHashedCloudinaryStorage)
+from django.core.files import File
+from django.core.management import call_command
+from django.utils import version
 
 
 def get_random_name():
